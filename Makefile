@@ -1,6 +1,6 @@
 NAME := miniRT
 CC := cc
-CFLAGS := -Wextra -Wall -Werror -Wunreachable-code -Ofast -g
+CFLAGS := -Wextra -Wall -Werror -Wunreachable-code -O3 -g
 LIBMLX := libs/MLX42
 LIBFT := libs/libft
 MLX_BUILD := $(LIBMLX)/build
@@ -52,6 +52,7 @@ OBJS += $(addprefix $(OBJ_D)/intersections/, ${HIT:.c=.o})
 all: $(NAME)
 
 $(MLX_BUILD)/libmlx42.a:
+	@which cmake > /dev/null 2>&1 || (echo "Error: cmake is required to build MLX42. Run: brew install cmake glfw" && exit 1)
 	cmake $(LIBMLX) -B $(MLX_BUILD)
 	cmake --build $(MLX_BUILD) -j4
 
