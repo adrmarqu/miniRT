@@ -1,0 +1,16 @@
+*.o
+*.a
+*.swp
+*.swo
+*.d
+*.gch
+*.dSYM
+*.txt
+*.log
+.DS_Store
+.vscode
+.idea
+.bonus
+build/
+libs/MLX42/build/
+miniRT
